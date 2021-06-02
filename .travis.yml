@@ -7,8 +7,10 @@ jobs:
         - sudo apt update
         - sudo apt install python2.7 python-pip
         - sudo pip install tox
-    - name: "Python 3.8.0 on Xenial Linux"
+    - name: "Python 3.8.0 on ARM64 Linux"
       python: 3.8
+      os: linux
+      arch: arm64
       before_install:
         - sudo pip install tox
 
