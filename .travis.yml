@@ -9,7 +9,7 @@ jobs:
       before_install:
         - sudo apt-get update
         - sudo pip install tox
-        - update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+        - sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
 install: pip install --upgrade pip
 script:
