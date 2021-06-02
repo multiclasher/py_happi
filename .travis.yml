@@ -8,8 +8,9 @@ jobs:
       python: 3.8
       before_install:
         - sudo apt-get update
-        - sudo pip install tox
         - sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+        - sudo pip3 install tox
+
 
 install: pip install --upgrade pip
 script:
