@@ -1,11 +1,13 @@
 language: python
 jobs:
   include:
-      python: 3.8
+    - name: "Python version 2.7 on Linux"
       os: linux
-      arch: arm64
+      language: python
+      python:
+        - 3.8
       before_install:
+        - python -m pip install -U pip
         - sudo pip install tox
-install: pip install --upgrade pip
 script:
   - tox -e short-test
