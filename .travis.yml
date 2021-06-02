@@ -1,10 +1,13 @@
 language: python
-
-python:
-  - "3.8"
-before_install:
-  - sudo pip install tox-travis
-before_script:
-  - sudo pip install tox-travis
+jobs:
+  include:
+    - name: "Python 3.8 on Linux"
+      os: linux
+      dist: xenial
+      language: python
+      python: 3.8
+      script:
+        - sudo pip install tox
+install: pip install --upgrade pip
 script:
   - tox -e short-test
