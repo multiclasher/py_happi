@@ -8,7 +8,6 @@ jobs:
       python: 3.8
       before_install:
         - sudo pip install tox
-        - alias python=python3
 install: pip install --upgrade pip
 script:
   - tox -e short-test
