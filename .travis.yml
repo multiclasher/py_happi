@@ -7,8 +7,9 @@ jobs:
       language: python
       python: 3.8
       before_install:
-        - sudo apt-get update
+        - sudo apt update && sudo apt install python-is-python3
         - sudo pip install tox
+        - echo "alias python=python3" >> ~/.bash_aliases
 
 
 install: pip install --upgrade pip
