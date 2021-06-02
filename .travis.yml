@@ -1,13 +1,12 @@
 language: python
+python:
+- 3.8
+- 3.9
 jobs:
   include:
-    - name: "Python version 2.7 on Linux"
-      os: linux
-      language: python
-      python:
-        - 3.8
-      before_install:
-        - python -m pip install -U pip
-        - sudo pip install tox
+    - os: linux
+    name: linux 3.9
+    python: 3.9
+    before_install: sudo pip install tox
 script:
   - tox -e short-test
