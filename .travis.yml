@@ -1,13 +1,13 @@
 language: python
 jobs:
   include:
-    - name: "Python 3.8.0 on ARM64 Linux"
+    - name: "Python 3.8 on Linux"
       os: linux
+      dist: xenial
+      language: python
+      python: 3.8
       before_install:
-        - sudo apt update
-        - sudo apt install software-properties-common
-        - sudo add-apt-repository ppa:deadsnakes/ppa -y
-        - sudo apt install python3.8
+        - sudo apt-get update
         - sudo pip install tox
 
 install: pip install --upgrade pip
