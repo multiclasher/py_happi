@@ -8,6 +8,7 @@ jobs:
       python: 3.8
       before_install:
         - sudo pip install tox
+        - cat "alias python=python3" >>  ~/.bash_profile
 install: pip install --upgrade pip
 script:
   - tox -e short-test
