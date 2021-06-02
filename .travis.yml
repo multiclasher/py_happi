@@ -6,14 +6,10 @@ jobs:
       os: linux
       arch: arm64
       before_install:
-        - sudo apt-get install build-essential checkinstall
-        - sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
-        - cd /opt
-        - sudo wget https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
-        - sudo tar xzf Python-3.8.7.tgz
-        - cd Python-3.8.7
-        - sudo ./configure --enable-optimizations
-        - sudo make altinstall
+        - sudo apt update
+        - sudo apt install software-properties-common
+        - sudo add-apt-repository ppa:deadsnakes/ppa -y
+        - sudo apt install python3.8
         - sudo pip install tox
 
 install: pip install --upgrade pip
