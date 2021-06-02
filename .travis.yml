@@ -4,7 +4,7 @@ python:
 - 3.9
 jobs:
   include:
-    - os: linux
+  - os: linux
     name: linux 3.9
     python: 3.9
     before_install: sudo pip install tox
