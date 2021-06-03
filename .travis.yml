@@ -1,19 +1,13 @@
 language: python
-
-python:
-- 3.8
-- 3.7
-
-matrix:
+jobs:
   include:
-  - os: linux
-    name: PEP8 MyPy Coverage
-    python: 3.9
-    install:
-      - sudo apt update
-      - sudo pip3 install tox
-
+    - name: "Python version 3.7 on Linux"
+      os: linux
+      before_install:
+        - sudo apt update
+        - sudo apt install python3.7 python3-pip
+        - sudo pip install tox
 
 install: pip install --upgrade pip
-
-script: tox -e short-test
+script:
+  - tox -e short-test
