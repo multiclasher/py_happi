@@ -12,12 +12,12 @@ jobs:
         # Native libraries for pycairo / pygobject
         - sudo apt-get update
         # Coverage will be reported for the Python 3.7 Linux build
-        - pip3 install coveralls
+        - pip3 install coveralls -y
         - pip3 uninstall requests
         - pipenv shell
-        - pip install requests
+        - pip install requests -y
         - pytest --version
-        - pip3 install pytest
+        - pip3 install pytest -y
 
         - sudo pip install tox-travis
 
