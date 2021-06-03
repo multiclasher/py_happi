@@ -2,14 +2,11 @@ language: python
 jobs:
   include:
     - name: "Python 3.8.0 on Linux"
-      python:
-        - "3.8"
       os: linux
-      dist: xenial
-      before_install:
-        - sudo pip install tox-travis
-        - sudo pip install pandas
-        - sudo pip install virtualenv
+      python: 3.8
+      name: Python 3.8 with required dependencies and measure coverage
+      stage: Initial tests
+      env: TOXENV=py38-test
 
 install: pip install --upgrade pip
 script:
