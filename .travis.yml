@@ -7,10 +7,7 @@ jobs:
       language: python
       python: 3.8
       before_install:
-        - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-        - python3.8 get-pip.py
-        - sudo python3.8 -m pip install tox
-        - echo "alias python=python3.8" >> ~/.bashrc
+        - sudo pip install tox
 
 install: pip install --upgrade pip
 script:
