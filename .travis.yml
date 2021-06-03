@@ -1,7 +1,7 @@
 language: python
 jobs:
   include:
-    - name: "Python version 2.7 on Linux"
+    - name: "Python 2.7 on Linux"
       os: linux
       before_install:
         - sudo apt update
@@ -23,7 +23,7 @@ jobs:
       language: shell
       before_install:
         - sudo pip install tox-travis
-    - name: "Python 3.8 on macOS 10.14"
+    - name: "Python 3.8 on macOS"
       os: osx
       osx_image: xcode11.6  # Python 3.8.0 running on macOS 10.14.6
       language: shell       # 'language: python' is an error on Travis CI macOS
