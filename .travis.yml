@@ -5,19 +5,18 @@ jobs:
       os: linux
       dist: xenial
       language: python
-      python: 3.7
+      python: 3.8
       service:
         - xvfb
       install:
         # Native libraries for pycairo / pygobject
         - sudo apt-get update
         # Coverage will be reported for the Python 3.7 Linux build
-        - pip3 install coveralls -y
         - pip3 uninstall requests
         - pipenv shell
-        - pip install requests -y
+        - pip install requests
         - pytest --version
-        - pip3 install pytest -y
+        - pip3 install pytest
 
         - sudo pip install tox-travis
 
