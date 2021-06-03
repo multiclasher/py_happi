@@ -1,7 +1,7 @@
 language: python
 jobs:
   include:
-    -- name: "Python 3.8 on Linux"
+    - name: "Python 3.8 on Linux"
       os: linux
       dist: xenial
       language: python
