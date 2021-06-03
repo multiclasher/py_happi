@@ -5,7 +5,7 @@ jobs:
       os: linux
       before_install:
         - sudo apt update
-        - sudo apt install python3.7 python3-pip
+        - sudo apt install python3 python3-pip
         - sudo pip install tox
 
 install: pip install --upgrade pip
