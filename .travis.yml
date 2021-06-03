@@ -12,6 +12,9 @@ matrix:
     install:
       - sudo apt update
       - sudo pip install tox
+      - sudo pip3 uninstall pytest -y
+      - pipenv shell
+      - pip install pytest
 
 
 install: pip install --upgrade pip
