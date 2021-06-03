@@ -1,12 +1,13 @@
 language: python
 jobs:
   include:
-    - name: "Python version 3.7 on Linux"
+    - name: "Python 3.8 on Linux"
       os: linux
+      dist: xenial
+      language: python
+      python: 3.8
       before_install:
-        - sudo apt update
-        - sudo apt install python3 python3-pip
-        - sudo pip install tox
+        - sudo pip install tox-travis
 
 install: pip install --upgrade pip
 script:
