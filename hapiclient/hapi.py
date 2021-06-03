@@ -7,11 +7,10 @@ import pickle
 import warnings
 from datetime import datetime, timedelta
 
-
+import pandas
 import isodate
 import numpy as np
 from joblib import Parallel, delayed
-import pandas
 
 from hapiclient.hapitime import hapitime2datetime, hapitime_reformat
 from hapiclient.util import setopts, log, warning, error
