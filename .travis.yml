@@ -2,12 +2,12 @@ language: python
 jobs:
   include:
     - name: "Python 3.8.0 on Linux"
-      python: 3.8
+      python:
+        - "3.8"
       os: linux
       dist: xenial
       before_install:
-        - sudo pip install tox
-        - sudo pip install pandas
+        - sudo pip install tox-travis
 
 install: pip install --upgrade pip
 script:
