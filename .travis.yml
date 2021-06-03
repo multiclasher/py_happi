@@ -11,7 +11,7 @@ jobs:
         - sudo ln -s /usr/bin/python3 /usr/bin/python
         - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
         - python3.8 get-pip.py
-        - sudo pip install tox-travis
+        - sudo pip3 install tox-travis
 
 install: pip install --upgrade pip
 script:
