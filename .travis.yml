@@ -7,6 +7,7 @@ jobs:
       dist: xenial
       before_install:
         - sudo pip install tox
+        - sudo pip install pandas
 
 install: pip install --upgrade pip
 script:
