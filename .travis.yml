@@ -6,7 +6,9 @@ jobs:
       dist: xenial
       language: python
       python: 3.8
-
-install: sudo apt install python3-pip
+      before_install:
+        - sudo apt update
+        - sudo apt install python3-pip
+        - python3.8 -m pip install tox
 script:
   - tox -e short-test
