@@ -9,6 +9,8 @@ jobs:
       before_install:
         - sudo pip install tox
         - echo "alias python=python3" >> ~/.bashrc
+      install:
+        - sudo apt install python-is-python3
 
 
 install: pip install --upgrade pip
