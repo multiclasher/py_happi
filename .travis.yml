@@ -7,6 +7,8 @@ jobs:
       name: Python 3.8 with required dependencies and measure coverage
       stage: Initial tests
       env: TOXENV=py38-test
+      before_install:
+        - sudo pip install tox-travis
 
 install: pip install --upgrade pip
 script:
