@@ -8,7 +8,7 @@ jobs:
       dist: xenial
       before_install:
         - sudo pip install tox-travis
-        - sudo pip install pandas
+        -  sudo python3 -m pip install pandas
         - sudo pip install virtualenv
 
 install: pip install --upgrade pip
