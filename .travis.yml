@@ -1,13 +1,23 @@
 language: python
 jobs:
   include:
-    - name: "Python 3.8.0 on Linux"
+    - name: "Python 3.8 on Linux, with optional dependencies and benchmark"
       os: linux
+      dist: xenial
+      language: python
       python: 3.8
-      name: Python 3.8 with required dependencies and measure coverage
-      stage: Initial tests
-      env: TOXENV=py38-test
-      before_install:
+      service:
+        - xvfb
+      install:
+        # Native libraries for pycairo / pygobject
+        - sudo apt-get install -y libgirepository1.0-dev gir1.2-gtk-3.0
+        # Pre-built wheel for wxpython
+        - pip3 install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 wxpython
+        # Install the various optional packages
+        - pip3 install eventlet gevent pycairo pygobject pygame==2.0dev10 pyqt5 pyside2 tornado twisted
+        # Coverage will be reported for the Python 3.7 Linux build
+        - pip3 install coveralls
+        
         - sudo pip install tox-travis
 
 install: pip install --upgrade pip
